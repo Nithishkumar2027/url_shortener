@@ -27,17 +27,25 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="table-active">
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-              <tr>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-              
+              <% shorturls.forEach(shorturl => { %>
+                <tr class="table-active">
+                  <td>
+                      <a href="<%= shorturl.full %>">
+                        <%= shorturl.full %>
+                      </a>
+                  </td>
+                  <td>
+                    <a href="<%= shorturl.short %>">
+                        <%= shorturl.short %>
+                    </a>
+                  </td>
+                  <td>
+                      <%= shorturl.clicks %>
+                  </td>
+                </tr>
+               
+              <% }) %>
+            
             </tbody>
           </table> 
     </div>
